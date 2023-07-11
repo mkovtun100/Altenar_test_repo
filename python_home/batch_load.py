@@ -4,7 +4,9 @@ from pyspark.sql.functions import *
 
 current_dir = os.path.dirname(__file__)
 relative_path = "..\\sources\\*.json"
+output_path = "..\\output\\"
 absolute_file_path = os.path.join(current_dir, relative_path)
+output_file_path = os.path.join(current_dir, output_path)
 
 spark = SparkSession.builder.appName("Altenar_batch_load") \
     .master("local[*]").getOrCreate()
@@ -27,6 +29,10 @@ counted_owners_task_1 = owners_columns_non_null.groupby("owner_id", "owner_login
 #result of the first task
 print("Result of the first task")
 counted_owners_task_1.show()
+counted_owners_task_1.write\
+    .format("csv")\
+    .mode("overwrite")\
+    .save(output_file_path + "task_1.csv")
 
 committers = df.withColumn("committers", col("payload.commits")).na.drop()\
     .withColumn("committers_cutted", col("committers.author.name"))\
@@ -42,6 +48,10 @@ committers_counted_task_2 = committers.select(col("committers_exploded")).groupb
 #result of the second task
 print("Result of the second task")
 committers_counted_task_2.show()
+committers_counted_task_2.write\
+    .format("csv")\
+    .mode("overwrite")\
+    .save(output_file_path + "task_2.csv")
 
 total_users = df.withColumn("user", col("actor.login"))\
     .select("user").distinct()
@@ -53,5 +63,9 @@ users_with_less_commits_task_3 = total_users.subtract(users_with_more_commits)
 #result of the third task
 print("Result of the third task")
 users_with_less_commits_task_3.show()
+users_with_less_commits_task_3.write\
+    .format("csv")\
+    .mode("overwrite")\
+    .save(output_file_path + "task_3.csv")
 
 spark.stop()
