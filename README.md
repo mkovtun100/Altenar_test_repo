@@ -18,7 +18,8 @@ root
   |-requirements.txt
   
 
-To execute the code:
+Action plan for the code execution.
+-
 1. Clone the repo using the command:
    
    git clone https://github.com/mkovtun100/Altenar_test_repo.git
