@@ -48,10 +48,10 @@ total_users = df.withColumn("user", col("actor.login"))\
 
 users_with_more_commits = committers_counted_task_2.select("name")
 
-users_with_less_commits = total_users.subtract(users_with_more_commits)
+users_with_less_commits_task_3 = total_users.subtract(users_with_more_commits)
 
 #result of the third task
 print("Result of the third task")
-users_with_less_commits.show()
+users_with_less_commits_task_3.show()
 
 spark.stop()
