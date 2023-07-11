@@ -12,9 +12,13 @@ Project structure.
 -
 root
   |-output
+  
   |-python_home
+  
     |-batch_load.py
+    
   |-sources
+  
   |-requirements.txt
   
 
