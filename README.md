@@ -19,6 +19,8 @@ root
   --|-batch_load.py
     
   |-sources
+
+  |-venv
   
   |-requirements.txt
 
