@@ -11,6 +11,7 @@ Currently this project is in Development stage. To check the code's work, you sh
 Project structure.
 -
 root
+
   |-output
   
   |-python_home
