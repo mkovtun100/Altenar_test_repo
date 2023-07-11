@@ -16,12 +16,12 @@ root
   
   |-python_home
   
-    |-batch_load.py
+  --|-batch_load.py
     
   |-sources
   
   |-requirements.txt
-  
+
 
 Action plan for the code execution.
 -
