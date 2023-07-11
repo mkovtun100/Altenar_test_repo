@@ -6,7 +6,7 @@ Currently following tasks are ready in the butch mode:
   2. List of Developers who did more than one commit in a day, ordered by name and number of commits;
   3. List of Developers with less than one commit in a day;
 
-Currently this project is in Development stage. To check the code's work, you should download GITHUB archives to the "source" directory near the "python_home".
+Currently this project is in Development stage. To check the code's work, you should download GITHUB archives to the "source" directory near the "python_home". Example URL: https://data.gharchive.org/2015-01-01-15.json.gz
 
 Project structure.
 -
